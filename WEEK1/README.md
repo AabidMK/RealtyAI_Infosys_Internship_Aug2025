@@ -14,3 +14,14 @@ The following datasets were analyzed to identify the most suitable one for house
 
 # Outcome
 Dataset 3 is sutaible for the house price prediction model
+
+
+
+
+
+## SEQUENCE OF FILES (TASK WISE)
+
+1. Data Exploration.ipynb
+   -- Choosing the most relevant dataset by performing initial data exploration
+2. Exploratory Data Analysis.ipynb
+   -- Performed EDA using various graphs and charts for exploring the dataset and gaining insights
