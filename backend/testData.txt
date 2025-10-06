@@ -1,0 +1,15 @@
+{
+  "Location": "Baner",
+  "City": "Pune",
+  "BHK": 3,
+  "Total_Area": 1500,
+  "Price_per_SQFT": 6000,
+  "Baths": 3,
+  "Balcony": "Yes"
+}
+
+
+{
+  "region": "Alabama",
+  "horizon": 12
+}
