@@ -1,6 +1,6 @@
 # 🏠 House Price Prediction & Forecasting System
 
-A machine learning system for predicting real estate prices and forecasting housing market trends.
+A smart real estate insights platform for predicting real estate prices and forecasting housing market trends.
 
 ## 🚀 Quick Start
 
@@ -72,5 +72,6 @@ Uses Facebook Prophet to analyze historical data and predict trends:
 - Trend analysis and seasonal decomposition
 
 ## 📄 License
+
 
 This project is licensed under the MIT License.
