@@ -10,11 +10,7 @@ A comprehensive AI-powered real estate analytics platform that provides price pr
 - [Prerequisites](#prerequisites)
 - [Installation & Setup](#installation--setup)
 - [Running the Application](#running-the-application)
-- [API Documentation](#api-documentation)
-- [Usage Guide](#usage-guide)
 - [Models](#models)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
