@@ -1,32 +1,55 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware 
 from pydantic import BaseModel
 import joblib
 import pandas as pd
-import sys, os
-
-# ----------------------------
-# Add src folder to Python path
-# ----------------------------
-sys.path.append(os.path.join(os.getcwd(), "Full_Pipeline_House_Price_Prediction", "src"))
-from inference import RealEstatePredictor
+import os
+from typing import Dict, Optional
 
 # ----------------------------
 # Model Paths
 # ----------------------------
-PRICE_MODEL_PATH = "Full_Pipeline_House_Price_Prediction/models/real_estate_pipeline_adaboost.joblib"
-TS_MODELS_PATH = "House_Price_Prediction_Time_Series_Forecasting/models/all_states_models.pkl"
+REAL_ESTATE_MODEL_DIR = r"D:\dev\test\internship\RealtyAI_Infosys_Internship_Aug2025\Models\real_estate_pipeline_v20250915_182141.joblib"  # Directory for price models
+TS_MODELS_PATH = r"D:\dev\test\internship\RealtyAI_Infosys_Internship_Aug2025\Models\all_region_models.joblib"
 
 # ----------------------------
 # FastAPI Setup
 # ----------------------------
 app = FastAPI(title="Real Estate AI API")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-# Load models
-predictor = RealEstatePredictor(model_path=PRICE_MODEL_PATH)
+
+# Load TS models
 ts_models = joblib.load(TS_MODELS_PATH)
 
+# Real Estate Predictor Class (from working code)
+class RealEstatePredictor:
+    def __init__(self, model_dir: str = REAL_ESTATE_MODEL_DIR):
+        self.model_dir = model_dir
+        self.pipeline = None
+
+    def load_model(self):
+        self.pipeline = joblib.load(REAL_ESTATE_MODEL_DIR)
+
+    def predict(self, property_data: Dict) -> float:
+        if self.pipeline is None:
+            self.load_model()
+        df = pd.DataFrame([property_data])
+        prediction = self.pipeline.predict(df)
+        return float(prediction[0])
+
+# Initialize predictor
+real_estate_predictor = RealEstatePredictor()
+real_estate_predictor.load_model()
+
 # ----------------------------
-# Request Models
+# Request Models 
 # ----------------------------
 class PriceRequest(BaseModel):
     Location: str
@@ -34,8 +57,8 @@ class PriceRequest(BaseModel):
     BHK: int
     Total_Area: float
     Price_per_SQFT: float
-    Baths: int
-    Balcony: str
+    Bathroom: int  
+    Balcony: Optional[bool] = None  
 
 
 class ForecastRequest(BaseModel):
@@ -49,17 +72,13 @@ class ForecastRequest(BaseModel):
 @app.post("/predict_price")
 def predict_price(request: PriceRequest):
     try:
-        property_data = {
-            "Location": request.Location,
-            "Property Title": f"{request.BHK} BHK Apartment",
-            "Total_Area": request.Total_Area,
-            "Price_per_SQFT": request.Price_per_SQFT,
-            "Baths": request.Baths,
-            "Balcony": request.Balcony,
-            "City": request.City,
+        property_data = request.dict()  # Direct dict conversion like working code
+        price = real_estate_predictor.predict(property_data)
+        return {
+            "property_data": property_data,
+            "predicted_price": price,
+            "predicted_price_crores": price / 100  # Optional, from working code
         }
-        prediction = predictor.predict(property_data)
-        return {"predicted_price": float(prediction)}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -74,15 +93,25 @@ def forecast(request: ForecastRequest):
         if isinstance(model, dict):  # Handle dict inside dict case
             model = list(model.values())[0]
 
-        future = pd.DataFrame({
-            "ds": pd.date_range(start=pd.Timestamp.today(), periods=request.horizon, freq="M")
-        })
+        historical_df = model.history.copy()
+        historical_df = historical_df.rename(columns={"ds": "Month", "y": "Historical Price"})
+        
+        future = model.make_future_dataframe(periods=request.horizon, freq="ME")
         forecast = model.predict(future)
-        forecast_df = forecast[["ds", "yhat"]].rename(
-            columns={"ds": "Month", "yhat": "Forecasted Price"}
+        
+        last_training_date = model.history["ds"].max()
+        
+        forecasted_periods = forecast[forecast["ds"] > last_training_date].copy()
+        forecasted_periods = forecasted_periods.rename(
+            columns={"ds": "Month", "yhat": "Forecasted Price", 
+                    "yhat_lower": "Lower Bound", "yhat_upper": "Upper Bound"}
         )
-
-        return {"forecast": forecast_df.to_dict(orient="records")}
+        
+        return {
+            "historical": historical_df[["Month", "Historical Price"]].to_dict(orient="records"),
+            "forecast": forecasted_periods[["Month", "Forecasted Price", "Lower Bound", "Upper Bound"]].to_dict(orient="records"),
+            "last_training_date": last_training_date.isoformat()
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -93,4 +122,3 @@ def get_available_regions():
         return {"regions": regions}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
