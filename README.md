@@ -43,7 +43,39 @@ buyers, investors, and urban planners.
 ### Frontend
 - **Framework:** Streamlit  
 - **Charts & Visualization:** Plotly / Matplotlib  
-- **Purpose:** Provides an interactive user interface to input property details and view analytics.  
+- **Purpose:** Provides an interactive user interface to input property details and view analytics.
+
+## Project Structure
+
+Real_Estate_Price_Prediction_Model/
+│
+├── backend/
+│   ├── main.py
+│   ├── testData.txt
+│   ├── requirements.txt
+│   └── __pycache__/
+│
+├── Full_Pipeline_House_Price_Prediction/
+│   ├── data/
+│   │   └── Real Estate Data V21.csv
+│   ├── models/
+│   │   └── real_estate_pipeline_adaboost.joblib
+│   └── src/
+│       ├── feature_engineering.py
+│       ├── inference.py
+│       ├── train_pipeline.py
+│
+├── House_Price_Prediction_Time_Series_Forecasting/
+│   ├── models/
+│   │   └── all_states_models.pkl
+│   ├── State_time_series.csv
+│   └── Time_Series_Forecasting_Price_Prediction.ipynb
+│
+├── App.py
+├── README.md
+├── .gitignore
+└── LICENSE
+
 
 
 
