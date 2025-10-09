@@ -18,7 +18,7 @@ A comprehensive AI-powered real estate analytics platform that provides price pr
 ### Price Prediction
 - Predict real estate prices based on property features
 - Input parameters: Location, City, BHK, Total Area, Price per SQFT, Bathrooms, Balcony
-- Uses BaggingRegressor ML pipeline for accurate predictions
+- Uses Adaboost ML pipeline for accurate predictions
 
 ### Time Series Forecasting
 - Single Region Forecast: Detailed forecast with confidence intervals for one region
@@ -43,18 +43,10 @@ A comprehensive AI-powered real estate analytics platform that provides price pr
   - pandas 2.0.0+
   - numpy 1.24.0+
 - Model Serialization: joblib 1.3.0+
-- Server: Uvicorn (with standard extras)
 
 ### Frontend
-- Framework: React 18
-- Charts: Recharts
-- Icons: React Icons (Font Awesome)
-- HTTP Client: Fetch API
-- Build Tool: Create React App
+- Framework: Stremlit
 
-### Package Management
-- Backend: uv (Astral's fast Python package installer)
-- Frontend: npm/yarn
 
 ## Project Structure
 
