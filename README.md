@@ -24,6 +24,9 @@ RealtyAI/
 │   ├── real_estate_pipeline_v20250924_122040.joblib
 │   ├── realty_ai.py
 │   ├── State_time_series.csv
+├── AI Project_ RealtyAI Smart Real Estate Insight Platform.pdf
+├── LICENSE
+└── README.md                      # This file
 ```
 
 ### 1. **House Price Prediction**
