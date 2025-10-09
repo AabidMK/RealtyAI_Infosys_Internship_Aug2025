@@ -47,6 +47,7 @@ buyers, investors, and urban planners.
 
 ## Project Structure
 
+```bash
 Real_Estate_Price_Prediction_Model/
 │
 ├── backend/
