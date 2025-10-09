@@ -35,6 +35,7 @@ Models: Regression-based pipelines, Random Forest, XGBoost, Prophet
 ### PROJECT ORGANIZATION:
 
 RealtyAI/
+
 ├── app.py                          
 ├── README.md                        
 ├── requirements.txt                 
