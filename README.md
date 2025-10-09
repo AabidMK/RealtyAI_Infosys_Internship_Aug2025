@@ -77,6 +77,30 @@ Real_Estate_Price_Prediction_Model/
 ├── .gitignore
 └── LICENSE
 
+```
+
+## Prerequisites  
+
+### System Requirements  
+- **OS:** Windows 10/11, macOS, or Linux  
+- **Python:** 3.10+  
+- **Node.js:** 16.x+  
+- **npm:** 8.x+  
+
+### Package Managers  
+- **npm**: For frontend dependencies  
+
+---
+
+## Installation & Setup  
+
+### Step 1: Clone the Repository  
+```bash
+cd d:\dev\test\internship
+git clone https://github.com/AabidMK/RealtyAI_Infosys_Internship_Aug2025.git
+cd RealtyAI_Infosys_Internship_Aug2025/aditi_nagave
+```
+
 
 
 
