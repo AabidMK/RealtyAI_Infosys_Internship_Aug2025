@@ -34,20 +34,25 @@ Models: Regression-based pipelines, Random Forest, XGBoost, Prophet
 
 ### PROJECT ORGANIZATION:
 
-RealtyAI
+RealityAI
 ├── app.py
 ├── README.md
 ├── requirements.txt
-├── data
+│
+├── data/
 │   └── Indian_Real_Estate_Data.csv
-├── models
+│
+├── models/
 │   ├── real_estate_price_pipeline.pkl
 │   └── city_forecast_models.pkl
-├── notebooks
+│
+├── notebooks/
 │   ├── Data_Preprocessing.ipynb
 │   └── Time_Series_Analysis.ipynb
-└── assets      
-    
+│
+└── assets/
+    └── ui_screenshot.png
+
 
 ### SETUP & USAGE:
 
