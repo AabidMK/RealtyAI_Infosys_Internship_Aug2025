@@ -62,23 +62,23 @@ Interactive charts for real-time forecast visualization.
 Works seamlessly on both desktop and mobile browsers.
 
 RealtyAI/
-├── app.py                          # Your main Streamlit app (rename App.py to app.py)
-├── requirements.txt                # List of all dependencies
-├── README.md                       # Documentation
+├── app.py   
+├── requirements.txt               
+├── README.md                       
 │
 ├── assets/
-│   └── image_e0bf3c.png            # Optional - add screenshots for README
+│   └── image_e0bf3c.png            
 │
 ├── data/
-│   └── State_time_series.csv       # If you have your dataset
+│   └── State_time_series.csv       
 │
 ├── models/
-│   ├── prophet_models.joblib       # Prophet model file
-│   ├── real_estate_pipeline.pkl    # Your ML pipeline
-│   └── bagging_regressor_model.pkl # Bagging Regressor
+│   ├── prophet_models.joblib       
+│   ├── real_estate_pipeline.pkl    
+│   └── bagging_regressor_model.pkl 
 │
 └── notebooks/
-    └── Time_Series_EDA.ipynb       # Your Jupyter analysis notebook
+    └── Time_Series_EDA.ipynb      
 
 🧰 Technology Stack
 
@@ -90,7 +90,7 @@ Data Handling: pandas, numpy, joblib
 
 Visualization: Streamlit Line Charts
 
-⚙️ Setup Instructions
+⚙️ Setup Instructions 
 1️⃣ Clone the Repository
 git clone <your_repo_url>
 cd RealtyAI
