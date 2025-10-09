@@ -32,7 +32,7 @@ Platforms & Tools: Jupyter Notebook, Streamlit, Google Colab
 Models: Regression-based pipelines, Random Forest, XGBoost, Prophet
 
 
-## PROJECT ORGANIZATION:
+### PROJECT ORGANIZATION:
 
 RealtyAI
 ├── app.py
@@ -46,7 +46,7 @@ RealtyAI
 ├── notebooks
 │   ├── Data_Preprocessing.ipynb
 │   └── Time_Series_Analysis.ipynb
-└── assets           
+└── assets      
     
 
 ### SETUP & USAGE:
