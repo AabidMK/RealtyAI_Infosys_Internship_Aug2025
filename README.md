@@ -61,10 +61,6 @@ Interactive charts for real-time forecast visualization.
 
 Works seamlessly on both desktop and mobile browsers.
 
-📂 Recommended Folder Structure
-
-For clarity and better organization, arrange your project as follows 👇
-
 RealtyAI/
 ├── app.py                          # Your main Streamlit app (rename App.py to app.py)
 ├── requirements.txt                # List of all dependencies
