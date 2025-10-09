@@ -98,10 +98,86 @@ Real_Estate_Price_Prediction_Model/
 ```bash
 cd d:\dev\test\internship
 git clone https://github.com/AabidMK/RealtyAI_Infosys_Internship_Aug2025.git
-cd RealtyAI_Infosys_Internship_Aug2025/aditi_nagave
+cd RealtyAI_Infosys_Internship_Aug2025
+git checkout aditi_nagave
 ```
 
+### Step 2: Create & activate a virtual environment
+```
+# Create virtual environment
+python -m venv venv
+
+# Activate on Windows
+venv\Scripts\activate
+
+# Activate on macOS/Linux
+source venv/bin/activate
+```
+2.2 Install Backend Dependencies
+
+Make sure you are inside your backend folder:
+
+cd backend
 
 
+Then install dependencies via pip:
+
+pip install -r requirements.txt
+
+
+⚠️ Ensure requirements.txt includes packages like:
+
+fastapi
+uvicorn
+pandas
+scikit-learn
+joblib
+
+2.3 Verify Model Files
+
+Ensure your trained model files exist in:
+
+/backend/Models
+├── real_estate_pipeline_v20250915_182141.joblib
+└── all_region_models.joblib
+
+
+If missing:
+
+Train models using the provided Jupyter notebooks.
+
+Or download pre-trained .joblib files.
+
+2.4 Run the FastAPI Backend
+uvicorn main:app --reload
+
+
+Replace main with your FastAPI file name if different.
+
+Access API docs at 👉 http://127.0.0.1:8000/docs
+
+🎨 Step 3: Frontend Setup (Streamlit)
+3.1 Navigate to frontend
+cd ../frontend
+
+3.2 Install Frontend Dependencies
+pip install -r requirements.txt
+
+
+⚠️ Ensure requirements.txt includes:
+
+streamlit
+pandas
+matplotlib
+seaborn
+joblib
+
+3.3 Run Streamlit App
+streamlit run app.py
+
+
+Replace app.py with your Streamlit file if different.
+
+Frontend will open in browser at http://localhost:8501
 
 
