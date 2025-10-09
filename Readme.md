@@ -55,3 +55,40 @@ The platform leverages machine learning, data analytics, and time series forecas
 Incorporate external factors like interest rates, inflation, and demographics.
 
 Deploy the model using AWS or Azure Cloud for scalability.
+
+### RealtyAI – Smart Real Estate Insight Platform 
+│
+├── 1. Overview
+│     └── Short summary of what the project is about and its purpose.
+│
+├── 2. Key Features
+│     ├── Price Prediction
+│     ├── Data Visualization
+│     ├── Time Series Forecasting
+│     ├── Data Cleaning & Feature Engineering
+│     └── Automated Prediction Pipeline
+│
+├── 3. Technologies Used
+│     ├── Languages & Libraries → Python, Pandas, NumPy, Scikit-learn, XGBoost, Prophet
+│     ├── Tools & Platforms → Jupyter Notebook, GitHub, Google Colab
+│     └── Models → Linear Regression, Random Forest, XGBoost, Prophet
+│
+├── 4. Project Workflow
+│     ├── Step 1: Data Collection and Exploration
+│     ├── Step 2: Data Cleaning and Preprocessing
+│     ├── Step 3: Feature Engineering
+│     ├── Step 4: Model Development
+│     ├── Step 5: Forecasting
+│     └── Step 6: Model Evaluation
+│
+├── 5. How to Run the Project
+│     ├── Step 1: Open the project folder in Jupyter Notebook or Google Colab
+│     ├── Step 2: Install required libraries (pandas, numpy, scikit-learn, xgboost, prophet, matplotlib, seaborn)
+│     ├── Step 3: Open and execute the main notebook file (Real_Estate_Price_Prediction.ipynb)
+│     └── Step 4: View results, graphs, and prediction outputs
+│
+├── 6. Future Enhancements
+│     ├── Add Streamlit or Flask for real-time web interface
+│     ├── Include geo-spatial analysis (Folium / Plotly)
+│     ├── Add economic and demographic data for better predictions
+│     └── Deploy on cloud platforms like AWS or Azure
