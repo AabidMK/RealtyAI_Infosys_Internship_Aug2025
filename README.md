@@ -35,23 +35,23 @@ Models: Regression-based pipelines, Random Forest, XGBoost, Prophet
 ### PROJECT ORGANIZATION:
 
 RealtyAI/
-├── app.py                           # Main Streamlit application
-├── README.md                        # Project documentation
-├── requirements.txt                 # Python dependencies
+├── app.py                          
+├── README.md                        
+├── requirements.txt                 
 │
 ├── data/
-│   └── Indian_Real_Estate_Data.csv  # Dataset containing property features
+│   └── Indian_Real_Estate_Data.csv  
 │
 ├── models/
-│   ├── real_estate_price_pipeline.pkl  # ML pipeline for price prediction
-│   └── city_forecast_models.pkl        # Prophet models for city-wise forecasts
+│   ├── real_estate_price_pipeline.pkl  
+│   └── city_forecast_models.pkl        
 │
 ├── notebooks/
-│   ├── Data_Preprocessing.ipynb        # Cleaning and feature engineering
-│   └── Time_Series_Analysis.ipynb      # Forecasting and trend exploration
+│   ├── Data_Preprocessing.ipynb      
+│   └── Time_Series_Analysis.ipynb      
 │
 └── assets/
-    └── ui_screenshot.png               # Screenshot of Streamlit interface
+    └── ui_screenshot.png               
     
 
 ### SETUP & USAGE:
