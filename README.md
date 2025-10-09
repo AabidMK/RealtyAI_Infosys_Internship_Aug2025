@@ -27,7 +27,7 @@ RealtyAI is an evolving platform. Future development will focus on expanding its
 ## 📂 Recommended Folder Structure
 
 For clarity and organization, it's best to structure your project files as follows. You may need to create the `models`, `data`, and `notebooks` directories and move your files into them.
-
+```bash
 .
 ├── app.py                      # Main Streamlit application script
 ├── requirements.txt              # Python dependencies for the project
@@ -45,6 +45,8 @@ For clarity and organization, it's best to structure your project files as follo
 │
 └── notebooks/
     └── Time_Series_EDA.ipynb     # Jupyter Notebook for exploratory data analysis
+
+'''
 
 
 ## 🚀 Getting Started
