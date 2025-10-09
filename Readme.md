@@ -56,7 +56,7 @@ Incorporate external factors like interest rates, inflation, and demographics.
 
 Deploy the model using AWS or Azure Cloud for scalability.
 
-### RealtyAI – Smart Real Estate Insight Platform 
+### Project Structure
 │
 ├── 1. Overview
 │     └── Short summary of what the project is about and its purpose.
