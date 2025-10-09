@@ -26,6 +26,25 @@ buyers, investors, and urban planners.
 ### Time Series Forecasting
 - **Single Region Forecast:** Generate forecasts with confidence intervals.     
 - **Forecast Horizon:** 1–36 months ahead.  
-- Built with **Prophet** for reliable forecasting.  
+- Built with **Prophet** for reliable forecasting.
+
+## Technology Stack
+
+### Backend
+- **Framework:** FastAPI  
+- **Core Libraries:**  
+  - scikit-learn `1.7.1`  
+  - Prophet `1.1.0+`  
+  - pandas `2.0.0+`  
+  - numpy `1.24.0+`  
+  - joblib `1.3.0+` (for model serialization)  
+- **Purpose:** Exposes REST API endpoints for price prediction and forecasting.
+
+### Frontend
+- **Framework:** Streamlit  
+- **Charts & Visualization:** Plotly / Matplotlib  
+- **Purpose:** Provides an interactive user interface to input property details and view analytics.  
+
+
 
 
