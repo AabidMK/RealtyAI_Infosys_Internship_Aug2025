@@ -45,8 +45,8 @@ For clarity and organization, it's best to structure your project files as follo
 │
 └── notebooks/
     └── Time_Series_EDA.ipynb     # Jupyter Notebook for exploratory data analysis
+```
 
-'''
 
 
 ## 🚀 Getting Started
