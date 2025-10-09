@@ -6,11 +6,13 @@ buyers, investors, and urban planners.
 
 ### Table of Contents
 
-Features
-Technology Stack
-Project Structure
-Prerequisites
-Installation & Setup
-Running the Application
-Models
-License
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
+- [Installation & Setup](#-installation--setup)
+- [Running the Application](#-running-the-application)
+- [Models](#-models)
+- [License](#-license)
+- [Contributors](#-contributors)
+
